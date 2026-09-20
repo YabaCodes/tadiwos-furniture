@@ -1,0 +1,1 @@
+export default function CustomFurniturePage() { return <main className="container-shell py-14"><h1 className="text-4xl font-bold">Custom Furniture</h1><p className="mt-4 max-w-2xl text-[var(--muted)]">Customers will be able to describe made-to-measure work, add approximate dimensions and upload a reference image.</p></main>; }

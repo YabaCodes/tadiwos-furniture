@@ -1,0 +1,1 @@
+export default function QuotePage() { return <main className="container-shell py-14"><h1 className="text-4xl font-bold">Request a Quote</h1><p className="mt-4 max-w-2xl text-[var(--muted)]">The adaptive quote form will be implemented after the product and admin workflows are connected.</p></main>; }

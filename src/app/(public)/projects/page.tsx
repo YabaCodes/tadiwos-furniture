@@ -1,0 +1,1 @@
+export default function ProjectsPage() { return <main className="container-shell py-14"><h1 className="text-4xl font-bold">Projects</h1><p className="mt-4 text-[var(--muted)]">Completed residential, office, commercial and institutional work will appear here.</p></main>; }
