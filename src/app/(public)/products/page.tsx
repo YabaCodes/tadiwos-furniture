@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getPublishedCatalog } from "@/lib/data/catalog";
 
 export default async function ProductsPage() {
@@ -24,14 +25,18 @@ export default async function ProductsPage() {
       ) : (
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {catalog.products.map((product) => (
-            <article key={product.id} className="card overflow-hidden">
-              <div className="aspect-[4/3] bg-[#eadfce]" />
+            <Link key={product.id} href={`/product/${product.slug}`} className="card overflow-hidden transition-transform hover:-translate-y-0.5">
+              {product.cover_url ? (
+                <img src={product.cover_url} alt={product.name_en} className="aspect-[4/3] w-full object-cover" />
+              ) : (
+                <div className="flex aspect-[4/3] items-center justify-center bg-[#eadfce] text-sm text-[var(--muted)]">Photo coming soon</div>
+              )}
               <div className="p-5">
                 <p className="text-xs uppercase tracking-[.12em] text-[var(--muted)]">{product.category_name ?? "Furniture"}</p>
                 <h2 className="mt-2 text-xl font-semibold">{product.name_en}</h2>
-                <p className="mt-3 text-sm text-[var(--muted)]">{product.price_label}</p>
+                <p className="mt-3 text-sm font-semibold text-[var(--walnut)]">{product.price_label}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       )}
